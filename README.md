@@ -1,4 +1,4 @@
-# MagneticAR -現実世界に磁場を可視化するARアプリケーション
+# MagneticAR -磁場を可視化するARアプリ
 
 <p align="center">
   <img src="MagnetAR/Assets.xcassets/AppIcon.appiconset/1024.png" alt="app icon" width="150">
