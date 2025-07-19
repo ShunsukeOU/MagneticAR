@@ -1,7 +1,7 @@
 # MagneticAR -現実世界に磁場を可視化するARアプリケーション
 
 <p align="center">
-  <img src="path/to/your/app_icon_or_logo.png" alt="アプリのロゴ" width="150">
+  <img src="/Users/tymac/Desktop/myprogram/MagneticAR/MagnetAR/Assets.xcassets/AppIcon.appiconset/1024.png" alt="アプリのロゴ" width="150">
 </p>
 <p align="center">
   スマートフォンのセンサーとAR技術を使い、目に見えない磁力線を3D空間にリアルタイムで描画します。
