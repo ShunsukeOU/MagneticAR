@@ -90,6 +90,19 @@
                                     <action selector="DEL:" destination="BV1-FR-VrT" eventType="touchUpInside" id="BEc-8G-Ac1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oet-Pa-eLb">
+                                <rect key="frame" x="345" y="407" width="90" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="92A-VD-1mn"/>
+                                    <constraint firstAttribute="height" constant="180" id="xtd-Aa-rdh"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="SS        "/>
+                                <connections>
+                                    <action selector="SS:" destination="BV1-FR-VrT" eventType="touchUpInside" id="wC4-K3-tZu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,8 +120,10 @@
                             <constraint firstItem="Nsn-OS-gtm" firstAttribute="centerY" secondItem="7SC-AQ-iTD" secondAttribute="centerY" id="aYx-zi-5a4"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="aZ2-Tp-mzQ"/>
                             <constraint firstItem="x2w-aL-BfC" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="30" id="eTo-U0-TQy"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="Oet-Pa-eLb" secondAttribute="bottom" constant="189" id="kQa-5P-LPv"/>
                             <constraint firstItem="4NI-r4-vSW" firstAttribute="leading" secondItem="x2w-aL-BfC" secondAttribute="trailing" constant="37" id="mdj-Kt-62K"/>
                             <constraint firstItem="7SC-AQ-iTD" firstAttribute="leading" secondItem="ZYP-kC-ODK" secondAttribute="trailing" id="mdr-He-ypm"/>
+                            <constraint firstAttribute="trailing" secondItem="Oet-Pa-eLb" secondAttribute="trailing" constant="-45" id="pNf-Fx-TdQ"/>
                             <constraint firstItem="4NI-r4-vSW" firstAttribute="centerY" secondItem="x2w-aL-BfC" secondAttribute="centerY" id="s17-6e-tSW"/>
                         </constraints>
                     </view>
@@ -117,6 +132,7 @@
                         <outlet property="DEL" destination="Nsn-OS-gtm" id="xuw-6T-dQX"/>
                         <outlet property="REC" destination="7SC-AQ-iTD" id="0SY-ab-llV"/>
                         <outlet property="SHOWABS" destination="HlN-LH-9Rt" id="Hln-pz-hrP"/>
+                        <outlet property="SS" destination="Oet-Pa-eLb" id="pTD-Im-dps"/>
                         <outlet property="magnetoLabel" destination="x2w-aL-BfC" id="Sqe-Mh-FSP"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                         <outlet property="unit" destination="4NI-r4-vSW" id="f5j-Ta-eHd"/>
@@ -124,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.92307692307691" y="136.49289099526067"/>
+            <point key="canvasLocation" x="135.38461538461539" y="136.49289099526067"/>
         </scene>
     </scenes>
     <resources>

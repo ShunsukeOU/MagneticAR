@@ -69,5 +69,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>撮影したスクリーンショットを保存するために写真ライブラリを使用します。</string>
 </dict>
 </plist>

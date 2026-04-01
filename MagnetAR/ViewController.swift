@@ -17,7 +17,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var SHOWABS: UIButton!//地磁気測定用のver.
     @IBOutlet weak var magnetoLabel: UILabel!//磁気量のラベル
     @IBOutlet weak var unit: UILabel!//単位μTを表示
-    
+    @IBOutlet weak var SS: UIButton! // SS
     //グローバル変数
     //ノードを生成する間隔を調節（太さによる可視化を廃止→生成速度による磁場の強さの可視化を試みる）
     //var weight_i = 0
@@ -91,6 +91,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene.rootNode.addChildNode(objectNode)
         motionManager.startMagnetometerUpdates()
         motionManager.magnetometerUpdateInterval = 0.1//データを取得する間隔
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +107,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let height = self.SS.bounds.height
+        self.SS.layer.cornerRadius = height / 2.0      // これだけでOK
+        self.SS.layer.masksToBounds = true
+        
+        // 以下は変わらず
+        self.SS.layer.borderColor = UIColor.white.cgColor
+        self.SS.layer.borderWidth = 1.0
+        self.SS.backgroundColor = UIColor(red: 0, green: 255/255, blue: 0, alpha: 0.5)
+    }
     @IBAction func REC(_ sender: Any) {
         
         
@@ -177,6 +191,52 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.SHOWABS.layer.backgroundColor = DefaltColor
             isLength = false
             lengthcount = 0
+        }
+    }
+    
+    @IBAction func SS(_ sender: Any) {
+        // 1. スクリーンショットに映したくないボタンを一時的に隠す
+            let buttonsToHide = [REC, DEL, CHANGE, SHOWABS, SS] // SSボタン自身も隠す
+            buttonsToHide.forEach { $0?.isHidden = true }
+            
+            // 2. 画面全体のレンダリング（ラベルを含めるため）
+            // UIの描画が更新されるのをわずかに待つため、メインスレッドで実行
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                
+                // 3. 画面全体のコンテキストから画像を生成
+                UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0.0)
+                self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+                let screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+                UIGraphicsEndImageContext()
+                
+                // 4. 隠していたボタンを元に戻す
+                buttonsToHide.forEach { $0?.isHidden = false }
+                
+                if let image = screenshotImage {
+                    // 5. 写真ライブラリに保存する
+                    UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+                    
+                    // 6. 撮った瞬間の視覚的フィードバック（一瞬白く光らせる）
+                    let flashView = UIView(frame: self.view.frame)
+                    flashView.backgroundColor = .white
+                    self.view.addSubview(flashView)
+                    UIView.animate(withDuration: 0.3, animations: {
+                        flashView.alpha = 0
+                    }, completion: { _ in
+                        flashView.removeFromSuperview()
+                    })
+                }
+            }
+        }
+    
+    // 保存完了時に呼ばれる関数（エラーチェック用）
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            print("保存エラー: \(error.localizedDescription)")
+        } else {
+            // 成功したらiPhoneを軽く振動させて知らせる（触覚フィードバック）
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.success)
         }
     }
     
