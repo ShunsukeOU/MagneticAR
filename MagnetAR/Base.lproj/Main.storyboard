@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-aL-BfC">
-                                <rect key="frame" x="30" y="124" width="45" height="33"/>
+                                <rect key="frame" x="30" y="124" width="90" height="33"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
@@ -90,11 +90,11 @@
                                     <action selector="DEL:" destination="BV1-FR-VrT" eventType="touchUpInside" id="BEc-8G-Ac1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oet-Pa-eLb">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oet-Pa-eLb">
                                 <rect key="frame" x="345" y="407" width="90" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="92A-VD-1mn"/>
-                                    <constraint firstAttribute="height" constant="180" id="xtd-Aa-rdh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="92A-VD-1mn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="xtd-Aa-rdh"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -120,10 +120,10 @@
                             <constraint firstItem="Nsn-OS-gtm" firstAttribute="centerY" secondItem="7SC-AQ-iTD" secondAttribute="centerY" id="aYx-zi-5a4"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="aZ2-Tp-mzQ"/>
                             <constraint firstItem="x2w-aL-BfC" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="30" id="eTo-U0-TQy"/>
-                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="Oet-Pa-eLb" secondAttribute="bottom" constant="189" id="kQa-5P-LPv"/>
-                            <constraint firstItem="4NI-r4-vSW" firstAttribute="leading" secondItem="x2w-aL-BfC" secondAttribute="trailing" constant="37" id="mdj-Kt-62K"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Oet-Pa-eLb" secondAttribute="bottom" constant="189" id="kQa-5P-LPv"/>
+                            <constraint firstItem="4NI-r4-vSW" firstAttribute="leading" secondItem="x2w-aL-BfC" secondAttribute="trailing" constant="-8" id="mdj-Kt-62K"/>
                             <constraint firstItem="7SC-AQ-iTD" firstAttribute="leading" secondItem="ZYP-kC-ODK" secondAttribute="trailing" id="mdr-He-ypm"/>
-                            <constraint firstAttribute="trailing" secondItem="Oet-Pa-eLb" secondAttribute="trailing" constant="-45" id="pNf-Fx-TdQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oet-Pa-eLb" secondAttribute="trailing" constant="-45" id="pNf-Fx-TdQ"/>
                             <constraint firstItem="4NI-r4-vSW" firstAttribute="centerY" secondItem="x2w-aL-BfC" secondAttribute="centerY" id="s17-6e-tSW"/>
                         </constraints>
                     </view>
