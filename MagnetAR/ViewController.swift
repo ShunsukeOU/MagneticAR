@@ -19,19 +19,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var unit: UILabel!//単位μTを表示
     
     //グローバル変数
-    /*
-    var might_i = 0
-    let mighta = 11
-    let mightb = 10
-    let mightc = 9
-    let mightd = 8
-    let mighte = 7
-    let mightf = 6
-    let mightg = 5
-    let mighth = 4
-    let mighti = 3
-    let mightj = 2
-    */
     //ノードを生成する間隔を調節
     var weight_i = 0
     var weight = -1
@@ -76,26 +63,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     var existentNode: SCNNode?
     
-    override func viewDidLoad() {
+    override func viewDidLoad() {//260401 .frameを削除（UI改善のため、手動指定からAuto Layoutにするため）
         super.viewDidLoad()
         sceneView.delegate = self
         //ラベルのデザイン
-        magnetoLabel.frame = CGRect(x: 25, y: 26, width: 100, height: 41)
-        unit.frame = CGRect(x: 125, y: 26, width: 80, height: 41)
+        //magnetoLabel.frame = CGRect(x: 25, y: 26, width: 100, height: 41)
+        //unit.frame = CGRect(x: 125, y: 26, width: 80, height: 41)
         //ボタンのデザイン
         REC.layer.cornerRadius = 32.5//角を丸くする
-        REC.frame = CGRect(x: (self.view.frame.size.width)/2.0 - 32.5, y: (self.view.frame.size.height) - 90, width: 65, height: 65)
+        //REC.frame = CGRect(x: (self.view.frame.size.width)/2.0 - 32.5, y: (self.view.frame.size.height) - 90, width: 65, height: 65)
         DEL.layer.cornerRadius = 6.25//角を丸くする
-        DEL.frame = CGRect(x: (self.view.frame.size.width)/2.0 - 137.5, y: (self.view.frame.size.height) - 80, width: 50, height: 50)
+        //DEL.frame = CGRect(x: (self.view.frame.size.width)/2.0 - 137.5, y: (self.view.frame.size.height) - 80, width: 50, height: 50)
         self.DEL.layer.borderColor = UIColor.white.cgColor//外枠の色を指定
         self.DEL.layer.borderWidth = 1.0//外枠の太さを指定
         CHANGE.layer.cornerRadius = 22.5//角を丸くする
-        CHANGE.frame = CGRect(x: (self.view.frame.size.width)/2.0 - 75, y: (self.view.frame.size.height) - 125, width: 45, height: 45)
+        //CHANGE.frame = CGRect(x: (self.view.frame.size.width)/2.0 - 75, y: (self.view.frame.size.height) - 125, width: 45, height: 45)
         self.CHANGE.layer.borderColor = UIColor.white.cgColor//外枠の色を指定
         self.CHANGE.layer.borderWidth = 1.0//外枠の太さを指定
         self.CHANGE.backgroundColor = UIColor(red:0/255, green:255/255, blue:0/255, alpha:0.5)
         SHOWABS.layer.cornerRadius = 22.5//角を丸くする
-        SHOWABS.frame = CGRect(x: (self.view.frame.size.width)/2.0 + 32.5, y: (self.view.frame.size.height) - 125, width: 45, height: 45)
+        //SHOWABS.frame = CGRect(x: (self.view.frame.size.width)/2.0 + 32.5, y: (self.view.frame.size.height) - 125, width: 45, height: 45)
         self.SHOWABS.layer.borderColor = UIColor.white.cgColor//外枠の色を指定
         self.SHOWABS.layer.borderWidth = 1.0//外枠の太さを指定
 
@@ -412,113 +399,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             if isTouching == true && isChanging == true && isLength == false{
                 
-                /*
-                if magneto_abs < 33{
-                    if might_i < mighta{
-                    Empty()
-                    might_i = might_i + 1
-                }else{
-                    makeobject()
-                    might_i = 0
-                }
-                }
-                    
-                    if magneto_abs >= 33 && magneto_abs < 35{
-                        if might_i < mightb{
-                            Empty()
-                            might_i = might_i + 1
-                        }else{
-                            makeobject()
-                            might_i = 0
-                        }
-                    }
-                
-                if magneto_abs >= 35 && magneto_abs < 39{
-                    
-                    if might_i < mightc{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                if magneto_abs >= 39 && magneto_abs < 46{
-                    if might_i < mightd{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                if magneto_abs >= 46 && magneto_abs < 46{
-                    if might_i < mighte{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                if magneto_abs >= 46 && magneto_abs < 68{
-                    if might_i < mightf{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                if magneto_abs >= 68 && magneto_abs < 124{
-                    if might_i < mightg{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                
-                if magneto_abs >= 124 && magneto_abs < 315{
-                    if might_i < mighth{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                if magneto_abs >= 315 && magneto_abs < 1244{
-                    if might_i < mighti{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                
-                if magneto_abs >= 1244 {
-                    if might_i < mightj{
-                        Empty()
-                        might_i = might_i + 1
-                    }else{
-                        makeobject()
-                        might_i = 0
-                    }
-                }
-                */
-        
-                
-                
-          
                 let Point_m = SCNCylinder(radius: 0.00028, height: CGFloat(magneto_length))
                 Point_m.firstMaterial?.diffuse.contents = MagnetoColor
 

@@ -24,7 +24,7 @@
 
 ## Tech Stack
 
-* **OS**: iOS 17.0+
+* **OS**: iOS 14.5+
 * **言語**: Swift 5.9
 * **フレームワーク**: ARKit, SwiftUI, Core Location
 * **開発環境**: Xcode 15
@@ -35,7 +35,7 @@
 
 * Mac (macOS Sonoma以上)
 * Xcode 15以上
-* iPhoneまたはiPad (A9チップ以降、iOS 17以上)
+* iPhoneまたはiPad (A9チップ以降、iOS 14.5以上)
 
 ## Usage
 
