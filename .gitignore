@@ -4,6 +4,16 @@
 
 ## User settings
 xcuserdata/
+.LSOverride
+*.xcuserdatad
+*.xcscmblueprint
+
+## 一時ファイルとキャッシュ
+DerivedData/
+*.moved-aside
+
+## macOS
+.DS_Store
 
 ## Obj-C/Swift specific
 *.hmap

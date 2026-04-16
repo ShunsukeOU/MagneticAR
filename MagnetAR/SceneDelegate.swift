@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  MagnetAR
 //
-//  Created by 平良隼涼 on 2026/04/01.
+//  Created by Shunsuke Taira on 2026/04/01.
 //
 
 import UIKit
